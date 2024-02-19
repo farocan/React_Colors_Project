@@ -8,7 +8,7 @@ import {generatePalette} from "./colorHelpers";
 class App extends Component {
   findPalette(id){
     return seedColors.find(function(palette){
-      return Palette.id === id
+      return palette.id === id
     });
   }
   render(){
