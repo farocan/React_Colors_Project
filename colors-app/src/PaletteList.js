@@ -7,7 +7,7 @@ class PaletteList extends Component {
     render() {
         const {palettes} = this.props;
         return (
-            <div className='root'>
+            <div className='paletteList'>
                 <div className='container'>
                     <nav className='nav'>
                         <h1>React Colors</h1>
