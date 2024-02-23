@@ -16,7 +16,12 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    color: white
+    color: white;
+    align-items: center;
+    color: white;
+}
+.nav a {
+    color: white;
 }
 .palettes{
     box-sizing: border-box;
