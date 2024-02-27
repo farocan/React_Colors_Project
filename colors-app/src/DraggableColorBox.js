@@ -4,8 +4,11 @@ import "./DraggableColorBox.css";
 export default function DraggableColorBox(props){
     const{color} = props;
     return(
-        <div className='draggableColorBox' style={{backgroundColor: color}}>
-            {color}
+        <div 
+        className='draggableColorBox' 
+        style={{backgroundColor: color}}
+        >
+            {props.name}
         </div>
     )
 }
