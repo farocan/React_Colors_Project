@@ -1,5 +1,6 @@
 import React from 'react';
 import "./DraggableColorBox.css";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function DraggableColorBox(props){
     const{color} = props;
@@ -8,7 +9,10 @@ export default function DraggableColorBox(props){
         className='draggableColorBox' 
         style={{backgroundColor: color}}
         >
-            {props.name}
+            <div className='boxContent'>
+                <span>{props.name}</span>
+                <DeleteIcon className='deleteIcon'/>
+            </div>
         </div>
     )
 }
