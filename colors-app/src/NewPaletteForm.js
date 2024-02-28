@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Button from '@mui/material/Button';
-import DraggableColorBox from "./DraggableColorBox";
+import DraggableColorList from "./DraggableColorList";
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import {ChromePicker} from "react-color";
 
@@ -80,6 +80,7 @@ class NewPaletteForm extends Component {
     this.addNewColor = this.addNewColor.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeColor = this.removeColor.bind(this);
   }
   componentDidMount(){
     ValidatorForm.addValidationRule('isColorNameUnique', value => 
@@ -230,14 +231,12 @@ class NewPaletteForm extends Component {
           </Drawer>
           <Main open={open}>
             <DrawerHeader />
-            {this.state.colors.map(color =>(
-             <DraggableColorBox 
-             key = {color.name}
-             color={color.color} 
-             name={color.name} 
-             handleClick={() => this.removeColor(color.name)}
-            />
-              ))}         
+               <DraggableColorList 
+                  colors={this.state.colors} 
+                  setColors = {this.setColors}
+                  removeColor={this.removeColor}
+                  axis="xy"
+               />    
           </Main>
         </Box>
       );
